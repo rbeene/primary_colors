@@ -1,0 +1,15 @@
+<h1>Client Listing</h1>
+<table class="table">
+  <%= for client <- @clients do %>
+    <tr>
+      <td>
+        <b><%= client.name %></b> (<%= client.id %>)
+      </td>
+      <td>
+        <%= link "View", to: client_path(@conn, :show, client.id) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link "New", to: client_path(@conn, :new) %>

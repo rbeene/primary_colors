@@ -1,0 +1,8 @@
+<h1>Client <%= @client.name %></h1>
+
+<ul>
+  <li><b>Secret</b>: <%= @client.secret %></li>
+  <li><b>Redirect URI</b>: <%= @client.redirect_uri %></li>
+</ul>
+
+<%= link "View All", to: client_path(@conn, :index) %>

@@ -1,0 +1,16 @@
+<h1>App Listing</h1>
+<table class="table">
+  <%= for app <- @apps do %>
+    <tr>
+      <td>
+        <b><%= app.name %></b> (<%= app.id %>)
+      </td>
+      <td>
+        <%= link "View", to: app_path(@conn, :show, app.id) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link "New", to: client_path(@conn, :new) %>
+

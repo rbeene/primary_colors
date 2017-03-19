@@ -1,0 +1,14 @@
+<h1>New Client</h1>
+<%= form_for @changeset, client_path(@conn, :create), fn f -> %>
+
+  <div class="form-group">
+    <%= text_input f, :name, placeholder: "name", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input f, :redirect_uri, placeholder: "Redirect URI", class: "form-control" %>
+  </div>
+
+  <%= submit "Create Client", class: "btn btn-primary" %>
+<% end %>
+
