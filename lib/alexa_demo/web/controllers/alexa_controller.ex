@@ -43,9 +43,7 @@ defmodule AlexaDemo.AlexaController do
   end
 
   def intent_request(conn, "mix", request) do
-    colors = [request.request.intent.slots["color_one"]["value"],
-              request.request.intent.slots["color_two"]["value"]
-             ] |> Enum.sort
+    colors = request |> mixing_colors
 
     mixed_color = colors |> mix_colors
 
@@ -61,7 +59,7 @@ defmodule AlexaDemo.AlexaController do
     {:ok, user} = current_user(conn)
     color = Alexa.get_color_by_user(user).color
 
-    mixing_color =  request.request.intent.slots["color"]["value"]
+    mixing_color =  color_from_slot(request.request.intent.slots["color"])
 
     mixing_colors = [mixing_color, color] |> Enum.sort
 

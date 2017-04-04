@@ -1,0 +1,41 @@
+{
+  "intents": [
+    {
+      "intent": "colors"
+    },
+    {
+      "intent": "myfavorite"
+    },
+    {
+      "slots": [
+        {
+          "name": "color",
+          "type": "AMAZON.Color"
+        }
+      ],
+      "intent": "favorite"
+    },
+    {
+      "slots": [
+        {
+          "name": "color",
+          "type": "AMAZON.Color"
+        }
+      ],
+      "intent": "favorite_mix"
+    },
+    {
+      "slots": [
+        {
+          "name": "color_one",
+          "type": "AMAZON.Color"
+        },
+        {
+          "name": "color_two",
+          "type": "AMAZON.Color"
+        }
+      ],
+      "intent": "mix"
+    }
+  ]
+}
